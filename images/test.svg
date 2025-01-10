@@ -1,0 +1,7 @@
+<svg width="289" height="204" viewBox="0 0 289 204" xmlns="http://www.w3.org/2000/svg">
+  <!-- Demi-cercle à gauche -->
+  <circle cx="102" cy="103" r="103" fill="#4d61d1" />
+  
+  <!-- Carré à droite -->
+  <rect x="80" y="0" width="204" height="204" fill="#4d61d1" />
+</svg>

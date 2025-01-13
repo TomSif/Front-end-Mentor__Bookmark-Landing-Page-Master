@@ -7,7 +7,7 @@
   --SoftBlue: hsl(231, 69%, 60%);
   --SoftRed: hsl(0, 94%, 66%);
   --GrayishBlue: hsl(229, 8%, 60%);
-  --VeryDarkBlue: hsl(229, 31%, 21%);
+  --VeryDarkBlue: #252b46;
 }
 
 /* ##Define Fonts Face */
@@ -73,6 +73,97 @@ p {
 }
 
 /* +-----------------------------------------------------------+
+                              MENU MODAL
+ +-----------------------------------------------------------+ */
+
+.modal-dialog {
+  position: relative;
+  width: 100vw;
+  padding: inherit !important;
+  --bs-gutter-x: none;
+  max-width: 100vw !important;
+}
+
+.modal-content {
+  width: 99vw;
+  height: 667px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.modal-header {
+  margin-top: 45px;
+  padding-left: 2rem;
+  padding-right: 2.1rem;
+}
+
+.modal-title svg {
+  width: 149px;
+  height: 50px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#menuModal {
+  font-family: "Rubik", sans-serif;
+  text-transform: uppercase;
+  height: 667px;
+  --bs-modal-zindex: 1055;
+  --bs-modal-width: 0 !important;
+  --bs-modal-padding: 0 !important;
+  --bs-modal-margin: 0 !important;
+  --bs-modal-color: ;
+  --bs-modal-bg: var(--VeryDarkBlue);
+  --bs-modal-border-color: var(--bs-border-color-translucent);
+  --bs-modal-border-width: var(--bs-border-width);
+  --bs-modal-border-radius: none;
+  --bs-modal-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --bs-modal-inner-border-radius: none;
+  --bs-modal-header-padding-x: 0 !important;
+  --bs-modal-header-padding-y: 0 !important;
+  --bs-modal-header-padding: 0 !important;
+  --bs-modal-header-border-color: none;
+  --bs-modal-header-border-width: none;
+  --bs-modal-title-line-height: 1.5;
+  --bs-modal-footer-gap: 0 !important;
+  --bs-modal-footer-bg: ;
+  --bs-modal-footer-border-color: var(--bs-border-color);
+  --bs-modal-footer-border-width: var(--bs-border-width);
+}
+.btn-close {
+  width: 1rem !important ;
+  height: 1rem !important;
+  margin-top: -1.5rem !important;
+}
+
+.row {
+  --bs-gutter-x: none !important;
+  padding: none;
+}
+
+.modal-body {
+  padding-top: 2.65rem;
+}
+
+.nav-item__modal {
+  width: 80%;
+  border-top: 1px solid var(--GrayishBlue);
+}
+
+.nav-item__modal:last-of-type {
+  border-bottom: 1px solid var(--GrayishBlue);
+}
+
+.nav-link__modal {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  padding-top: 1.625rem;
+  padding-bottom: 1.625rem;
+  text-align: center;
+}
+/* +-----------------------------------------------------------+
                               MAIN
  +-----------------------------------------------------------+ */
 
@@ -83,18 +174,24 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100vw;
+  max-width: 100vw;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 .illustration__container {
   max-width: 375px;
   position: relative;
   width: 100%;
   height: 15.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .first-svg-container {
   position: relative;
   width: 100%;
-  overflow: hidden;
   height: 15.875rem;
 }
 
@@ -233,9 +330,9 @@ p {
 }
 
 .features-tab {
-  max-width: 375px; /* Largeur maximale pour éviter l'agrandissement */
-  width: 100%; /* Taille flexible avec une limite */
-  text-align: center; /* Centrer le texte si besoin */
+  max-width: 375px;
+  width: 100%;
+  text-align: center;
 }
 
 /* Features-tab illustration Start --> */
@@ -248,7 +345,6 @@ p {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  /* left: 32px; */
 }
 
 .features-tab-2_illustration {
@@ -388,8 +484,8 @@ p {
   border: none !important;
   padding-bottom: 0.25rem;
   padding-top: 0.5rem;
-  border-bottom: 1px solid #ddd !important; /* Bordure légère autour de chaque item */
-  width: 311px;
+  border-bottom: 1px solid #ddd !important;
+  width: 100%;
 }
 
 .headingOne {
@@ -517,7 +613,8 @@ footer {
 .nav-link:hover,
 .nav-link:focus {
   color: white;
-  transform: scale(0.9);
+  border: 2px solid white;
+  border-radius: 0.5em;
 }
 
 .footer__logo {
@@ -549,4 +646,126 @@ footer {
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
+}
+
+/* +-----------------------------------------------------------+
+                          MEDIA QUERIES
+ +-----------------------------------------------------------+ */
+
+@media (min-width: 999px) {
+  /* ----> HEADER */
+  #navbarNav {
+    height: 2.5rem;
+  }
+  .nav-logo__container .col-12 {
+    width: 50%;
+  }
+
+  .nav-item__desktop .nav-link {
+    color: var(--VeryDarkBlue);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.15rem;
+  }
+
+  .nav-item__desktop:last-of-type {
+    padding-left: 18px;
+  }
+
+  .nav-item__desktop .nav-link:focus {
+    color: var(--SoftRed);
+  }
+
+  .nav-item__desktop:hover .nav-link:hover {
+    border-color: var(--SoftRed);
+  }
+
+  .pt-header {
+    padding-top: 2.875rem;
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+
+  .list-container__desktop {
+    gap: 1.7rem;
+    padding-right: 4.5rem;
+    padding-left: 5.25rem;
+  }
+  /* ----> GET-IT SECTION */
+
+  .get-it-section {
+    display: grid !important;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 24rem;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .illustration {
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+
+  .illustration__container {
+    position: relative;
+    width: 100%;
+    max-width: inherit;
+    position: relative;
+    width: 100%;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .first-svg-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .first-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 36rem;
+  }
+
+  .dot-svg-container {
+    background-image: url("./images/test.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 584.7px;
+    height: 313px;
+    position: absolute;
+    bottom: -2.8rem;
+    right: -12.5rem;
+    z-index: -1;
+    max-width: inherit;
+  }
+
+  .get-it__text-container {
+    grid-column: 1;
+    grid-row: 1;
+    padding-top: 4.875rem;
+  }
+
+  .get-it__text-container h1 {
+    font-size: 2.2rem;
+  }
+  .get-it__text-container h1,
+  .get-it__text-container p {
+    text-align: left !important;
+  }
 }
